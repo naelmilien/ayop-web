@@ -1,13 +1,13 @@
 import { pgTable, text, integer, timestamp } from 'drizzle-orm/pg-core';
 
-export const user = pgTable('user', {
+export const user = pgTable('users', {
 	id: text('id').primaryKey(),
 	age: integer('age'),
 	username: text('username').notNull().unique(),
 	passwordHash: text('password_hash').notNull()
 });
 
-export const session = pgTable('session', {
+export const session = pgTable('sessions', {
 	id: text('id').primaryKey(),
 	userId: text('user_id')
 		.notNull()
